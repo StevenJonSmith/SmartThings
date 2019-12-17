@@ -206,7 +206,7 @@ def parse(output) {
                 sendEvent(name:'authToken', value:token, displayed:false)
     		}
         }
-        if (body.containsKey("mode")) {
+        if (body.containsKey("mode") && body.containsKey("value") = false) {
         	if (body['mode'] == "off" || body['mode'] == "disabled") {
             	sendEvent(name:'switch', value:"off", displayed:true)
             } else {
