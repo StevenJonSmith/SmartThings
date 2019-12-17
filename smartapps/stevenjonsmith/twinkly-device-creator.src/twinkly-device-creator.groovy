@@ -42,14 +42,14 @@ definition(
 
 preferences {
 	page(name: "addDevice", title: "Create Twinkly Device", install: true, uninstall: true) {
-        section("Name of Twinkly device to add:") {
-            input "deviceName", "text", required: true
-        }
-        section("IP address of Twinkly device:") {
-            input "deviceIP", "text", required: true
-        }
         section("Which hub shares the same network as the Twinkly device?") {
         	input name: "installHub", type: "hub", required: true
+        }
+		section("IP address of Twinkly device:") {
+            input "deviceIP", "text", required: true
+        }
+		section("Name of Twinkly device to add:") {
+            input "deviceName", "text", required: true
         }
     }
 }
@@ -66,10 +66,6 @@ def updated() {
 }
 
 def initialize() {
-	// Remove UPNP Subscription
-	unsubscribe()
-	state.subscribe = false
-    
     addDevice()
 
     log.debug "Application Initialized"
