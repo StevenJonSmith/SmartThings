@@ -44,7 +44,7 @@ metadata {
 	}
     
     preferences {
-        input("deviceIP", "string", title:"Device IP Address", description: "Device's IP address", required: true, displayDuringSetup: true)
+        input("deviceIP", "string", title: "Device IP Address", description: "Device's IP address", required: true, displayDuringSetup: true)
 	}
 
 	simulator 
@@ -54,7 +54,7 @@ metadata {
 
 	tiles(scale: 2)
     {
-    	multiAttributeTile(name:"main", type: "lighting", width: 6, height: 4, canChangeIcon: true) {
+    	multiAttributeTile(name: "main", type: "lighting", width: 6, height: 4, canChangeIcon: true) {
         	tileAttribute ("device.switch", key: "PRIMARY_CONTROL") {
                 attributeState "on", label:'${name}', action:"switch.off", icon:"st.Seasonal Winter.seasonal-winter-011", backgroundColor:"#00a0dc", nextState:"off"
                 attributeState "off", label:'${name}', action:"switch.on", icon:"st.Seasonal Winter.seasonal-winter-011", backgroundColor:"#ffffff", nextState:"on"
