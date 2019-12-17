@@ -34,9 +34,9 @@ definition(
     author: "Steven Jon Smith",
     description: "Helps users to create Twinkly devices for Twinkly devices pre-connected to the same local network.",
     category: "My Apps",
-    iconUrl: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience.png",
-    iconX2Url: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience@2x.png",
-    iconX3Url: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience@2x.png") {
+    iconUrl: "https://twinkly.com/wp-content/uploads/2019/09/cropped-twinkly-icon-32x32.png",
+    iconX2Url: "https://twinkly.com/wp-content/uploads/2019/09/cropped-twinkly-icon-180x180.png",
+    iconX3Url: "https://twinkly.com/wp-content/uploads/2019/09/cropped-twinkly-icon-270x270.png") {
     appSetting "deviceIP"
 }
 
