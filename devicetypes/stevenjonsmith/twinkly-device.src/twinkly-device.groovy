@@ -99,8 +99,6 @@ def on()
 	log.debug "Executing 'On'"
 	login()
     sendHubCommand(createAction("action", "led/mode", "{\"mode\":\"movie\"}"))
-	pause(500)
-    poll()
 }
 
 def off()
@@ -108,8 +106,6 @@ def off()
 	log.debug "Executing 'Off'"
 	login()
     sendHubCommand(createAction("action", "led/mode", "{\"mode\":\"off\"}"))
-	pause(500)
-    poll()
 }
 
 def setLevel(brightness) {
