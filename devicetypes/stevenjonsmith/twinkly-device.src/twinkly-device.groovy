@@ -96,29 +96,35 @@ def poll()
 
 def on()
 {
+	def actions = []
 	log.debug "Executing 'On'"
-	login()
-    sendHubCommand(createAction("action", "led/mode", "{\"mode\":\"movie\"}"))
+	actions.put(login())
+    actions.put(createAction("action", "led/mode", "{\"mode\":\"movie\"}"))
+	sendHubCommand(actions, 1000)
 }
 
 def off()
 {
+	def actions = []
 	log.debug "Executing 'Off'"
-	login()
-    sendHubCommand(createAction("action", "led/mode", "{\"mode\":\"off\"}"))
+	actions.put(login())
+    actions.put(createAction("action", "led/mode", "{\"mode\":\"off\"}"))
+	sendHubCommand(actions, 1000)
 }
 
 def setLevel(brightness) {
+	def actions = []
 	log.debug "Executing 'setLevel'"
-	login()
-    sendHubCommand(createAction("action", "led/out/brightness", "{\"value\":${brightness},\"type\":\"A\",\"mode\":\"enabled\"}"))
+	actions.put(login())
+    actions.put(createAction("action", "led/out/brightness", "{\"value\":${brightness},\"type\":\"A\",\"mode\":\"enabled\"}"))
+	sendHubCommand(actions, 1000)
 }
 
 def login() {
-	sendHubCommand(createAction("auth"))
-    pause(1000)
-    sendHubCommand(createAction("verify"))
-    pause(500)
+	def actions = []
+	actions.put(createAction("auth"))
+    actions.put(createAction("verify"))
+	return actions
 }
 
 def reset() {
